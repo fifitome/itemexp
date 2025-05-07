@@ -1,0 +1,50 @@
+/*
+这段CSS代码主要用于引入基础样式和特定编辑器的样式，
+同时定义了一个用于文本溢出处理的类和一个用于Element Plus菜单项的活动状态样式。
+通过这些样式，可以改善用户界面的可读性和交互体验。
+ */
+
+
+@import 'base.css';
+/*
+导入名为base.css的样式文件。这通常用于定义全局样式或基础样式
+ */
+@import 'wangeditor.css';
+/*
+导入名为wangeditor.css的样式文件，
+为特定的文本编辑器（如WangEditor）提供样式。
+ */
+.overflowShow {
+    /*
+    定义了一个名为overflowShow的CSS类，包含以下样式属性：
+     */
+    white-space: nowrap;
+    /*
+    不允许文本换行，所有文本将在同一行显示。
+     */
+    overflow: hidden;
+    /*
+    超出容器的内容将被隐藏。
+     */
+    text-overflow: ellipsis
+    /*
+    当文本溢出容器时，
+    使用省略号（...）表示被隐藏的部分。
+    这通常用于在单行文本中显示省略号。
+     */
+}
+
+.el-menu--horizontal>.el-menu-item.is-active {
+    /*
+    这个选择器用于样式化Element Plus的水平菜单中处于活动状态的菜单项（is-active）
+     */
+    color: orangered !important;
+    /*
+    将活动菜单项的文本颜色设置为橙红色，
+    并使用!important来确保此样式优先级高于其他样式。
+     */
+    border-bottom: 2px solid orangered !important;
+    /*
+    为活动菜单项添加一个2像素宽的橙红色底边框，同样使用!important来确保优先级。
+     */
+}

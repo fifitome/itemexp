@@ -1,0 +1,118 @@
+.editor-content-view {
+    /*border: 3px solid #ccc;*/
+    /*定义了.editor-content-view类的样式，这个类可能用于编辑器的内容区域。
+ */
+    border-radius: 5px;
+    /*
+    ：边框圆角为5像素
+     */
+    padding: 0 10px;
+    /*
+    左右内边距为10像素
+     */
+    margin-top: 20px;
+    /*
+    上边距为20像素。
+     */
+    overflow-x: auto;
+    /*
+    当内容超出容器宽度时，显示水平滚动条。
+     */
+}
+
+.editor-content-view p,
+.editor-content-view li {
+    white-space: pre-wrap; /* 保留空格 */
+}
+/*
+为段落和列表项设置white-space: pre-wrap;
+保留空白符和换行符，确保文本在编辑器中的外观与输入时保持一致。
+ */
+
+.editor-content-view blockquote {
+    border-left: 8px solid #d0e5f2;
+    padding: 10px 10px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+}
+/*
+为块引用（blockquote）设置边框、内边距、外边距和背景颜色。
+ */
+
+.editor-content-view code {
+    font-family: monospace;
+    background-color: #eee;
+    padding: 3px;
+    border-radius: 3px;
+}
+/*
+为code元素设置字体、背景颜色、内边距和边框圆角。
+
+ */
+.editor-content-view pre>code {
+    display: block;
+    padding: 10px;
+}
+/*
+当code元素是pre元素的直接子元素时，设置为块级元素，并增加内边距。
+ */
+
+.editor-content-view table {
+    border-collapse: collapse;
+}
+/*为表格设置边框折叠。
+ */
+.editor-content-view td,
+.editor-content-view th {
+    border: 1px solid #ccc;
+    min-width: 50px;
+    height: 20px;
+}
+/*为表格的单元格和表头单元格设置边框、最小宽度和高度。
+
+ */
+.editor-content-view th {
+    background-color: #f1f1f1;
+}
+/*为表头单元格设置背景颜色
+ */
+
+.editor-content-view ul,
+.editor-content-view ol {
+    padding-left: 20px;
+}
+/*
+为无序列表和有序列表设置左内边距，用于缩进列表项。
+ */
+.editor-content-view input[type="checkbox"] {
+    margin-right: 5px;
+}
+/*
+为类型为checkbox的输入元素设置右边距。
+ */
+#editor-wrapper {
+    border: 1px solid #ccc;
+    z-index: 100; /* 按需定义 */
+}
+/*
+为ID为editor—wrapper的元素设置边框和z-index属性。
+ */
+#toolbar-container { border-bottom: 1px solid #ccc; }
+/*
+为ID为toolbar-container的元素设置下边框。
+ */
+#editor-container { height: 500px; }
+/*
+为ID为editor-container的元素设置高度。
+ */
+#editor-content-view img {
+    max-width: 100%;
+}
+/*
+为ID为editor-content-view下的所有img元素设置最大宽度，确保图片不会超出其容器的宽度。
+ */
+
+
+/*
+wangeditor.css文件提供了WangEditor（富文本）编辑器内容视图的样式定义，包括基本的排版样式、代码高亮、表格样式、列表样式等。这些样式确保了编辑器内容在视觉上的一致性和可读性。
+ */

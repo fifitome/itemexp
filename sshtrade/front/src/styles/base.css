@@ -1,0 +1,113 @@
+/*
+这个base.css文件提供了一个基础的样式框架，
+包括颜色方案、字体设置、基本的布局样式和一些自定义的类。
+它还考虑了暗色模式，允许网站根据用户的系统偏好自动切换颜色方案。
+这样的基础样式文件有助于保持网站的一致性和可维护性。
+ */
+
+/* color palette from <https://github.com/vuejs/theme>
+ 这是一个注释，说明颜色方案来源于Vue.js的主题。
+*/
+:root {
+  /*
+  定义了一系列的颜色变量，这些变量被存储在:root伪类中，
+  可以通过var(--变量名)的方式在CSS中使用。
+  这些颜色被命名为--vt-c-white、--vt-c-black等，
+  分别代表不同的颜色和色调。
+   */
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project
+另一个注释，说明这些是项目特定的语义颜色变量*/
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /*
+  这是一个媒体查询，用于检测用户是否偏好暗色模式。
+  如果是，它会覆盖上面定义的颜色变量，使用更适合暗色模式的颜色。
+   */
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+/*
+为所有元素及其伪元素（::before和::after）设置box-sizing: border-box，
+这意味着元素的宽度和高度包括padding和border。
+同时设置margin为0，position为relative，font-weight为normal。
+ */
+
+body {
+  /*
+  为body元素设置最小高度、颜色、背景、过渡效果、行高、字体族、字体大小、文本渲染和字体平滑属性。
+   */
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+.w300 {
+  width: 300px;
+}
+
+th {
+  background-color: aliceblue !important;
+}
